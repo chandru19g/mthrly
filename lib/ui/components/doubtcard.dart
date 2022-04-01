@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mothrly/ui/themes.dart';
 
 class DoubtCard extends StatelessWidget {
   const DoubtCard({Key? key}) : super(key: key);
@@ -24,53 +25,37 @@ class DoubtCard extends StatelessWidget {
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children: [
                   Text(
                     "Asked by Mother",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 12.0,
-                    ),
+                    style: Themes().cardDesc.copyWith(color: Colors.black),
                   ),
                   Text(
                     "28 years, Kolkata",
-                    style: TextStyle(
-                      fontSize: 10.0,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.grey,
-                    ),
+                    style: Themes().cardDesc.copyWith(fontSize: 10.0),
                   ),
                 ],
               ),
               const SizedBox(
                 width: 10.0,
               ),
-              const Text(
+              Text(
                 "5m ago",
-                style: TextStyle(
-                  fontSize: 10.0,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.grey,
-                ),
+                style: Themes().cardDesc.copyWith(fontSize: 10.0),
               ),
             ],
           ),
-          const Center(
+          Center(
             child: Text(
               "Is hair loss normal after \n month of child's birth?",
-              style: TextStyle(
-                fontSize: 14.0,
-                fontWeight: FontWeight.w500,
-              ),
+              style: Themes()
+                  .cardDesc
+                  .copyWith(color: Colors.black, fontSize: 14.0),
             ),
           ),
-          const Text(
+          Text(
             "2 answers from doctors",
-            style: TextStyle(
-              fontSize: 12.0,
-              fontWeight: FontWeight.w500,
-              color: Colors.blue,
-            ),
+            style: Themes().cardDesc.copyWith(color: Colors.blue),
           ),
         ],
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mothrly/ui/themes.dart';
 
 class CouponCard extends StatelessWidget {
   const CouponCard({Key? key}) : super(key: key);
@@ -15,26 +16,19 @@ class CouponCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
+                Text(
                   "FLAT\n15% OFF",
-                  style: TextStyle(
-                    color: Color.fromRGBO(38, 78, 135, 1),
-                    fontSize: 26.0,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: 1.0,
-                  ),
+                  style: Themes().cardHeader.copyWith(
+                        color: const Color.fromRGBO(38, 78, 135, 1),
+                        fontSize: 26.0,
+                      ),
                 ),
                 const SizedBox(
                   height: 10.0,
                 ),
                 Text(
                   "On your\nfirst Doctor\nconsultation".toUpperCase(),
-                  style: const TextStyle(
-                    color: Colors.grey,
-                    fontSize: 10.0,
-                    fontWeight: FontWeight.w500,
-                    letterSpacing: 0.8,
-                  ),
+                  style: Themes().cardDesc.copyWith(fontSize: 11.0),
                 ),
               ],
             ),
@@ -62,15 +56,10 @@ class CouponCard extends StatelessWidget {
             child: Transform(
               alignment: FractionalOffset.center,
               transform: Matrix4.identity()..rotateZ(270 * 3.1415927 / 180),
-              child: const Center(
+              child: Center(
                 child: Text(
                   "FIRST : FIR15",
-                  style: TextStyle(
-                    fontSize: 12.0,
-                    letterSpacing: 0.6,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white,
-                  ),
+                  style: Themes().cardDesc.copyWith(color: Colors.white,),
                 ),
               ),
             ),

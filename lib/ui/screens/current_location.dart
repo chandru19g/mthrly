@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:mothrly/screens/signup_screen.dart';
+import 'package:mothrly/ui/components/myButton.dart';
+import 'package:mothrly/ui/screens/signup_screen.dart';
 import 'package:geocoding/geocoding.dart';
 
 class CurrentLocationScreen extends StatefulWidget {
@@ -67,7 +68,8 @@ class _CurrentLocationScreenState extends State<CurrentLocationScreen> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 10.0, bottom: 16.0, left: 26.0),
+                padding:
+                    const EdgeInsets.only(top: 10.0, bottom: 16.0, left: 26.0),
                 child: Text(
                   address != "" ? address : "",
                   style: const TextStyle(
@@ -79,25 +81,16 @@ class _CurrentLocationScreenState extends State<CurrentLocationScreen> {
               Padding(
                 padding: const EdgeInsets.symmetric(
                     horizontal: 20.0, vertical: 20.0),
-                child: ElevatedButton(
-                  onPressed: () {
+                child: MyButton(
+                  label: "Continue",
+                  color: const Color.fromRGBO(242, 107, 147, 1),
+                  onTapButton: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (BuildContext context) => const SignupScreen(),
                       ),
                     );
                   },
-                  child: const Center(
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20.0),
-                      child: Text("Continue"),
-                    ),
-                  ),
-                  style: TextButton.styleFrom(
-                      backgroundColor: const Color.fromRGBO(242, 107, 147, 1),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(60.0),
-                      )),
                 ),
               ),
             ],

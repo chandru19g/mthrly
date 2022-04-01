@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mothrly/ui/themes.dart';
 
 class Header extends StatelessWidget {
   final String title, image;
@@ -33,10 +34,7 @@ class Header extends StatelessWidget {
                       : const Text(""),
                   Text(
                     title,
-                    style: TextStyle(
-                      fontSize: fSize,
-                      fontWeight: FontWeight.w600,
-                    ),
+                    style: Themes().cardHeader.copyWith(fontSize: fSize),
                   ),
                 ],
               ),

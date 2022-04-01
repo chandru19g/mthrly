@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mothrly/screens/parent_home.dart';
+import 'package:mothrly/ui/screens/parent_home.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);

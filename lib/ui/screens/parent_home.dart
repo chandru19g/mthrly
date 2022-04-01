@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:mothrly/components/card1.dart';
-import 'package:mothrly/components/card2.dart';
-import 'package:mothrly/components/card3.dart';
-import 'package:mothrly/components/card4.dart';
-import 'package:mothrly/components/coupon_card.dart';
-import 'package:mothrly/components/doubtcard.dart';
-import 'package:mothrly/components/header.dart';
-import 'package:mothrly/screens/book_screen.dart';
+import 'package:mothrly/ui/components/card1.dart';
+import 'package:mothrly/ui/components/card2.dart';
+import 'package:mothrly/ui/components/card3.dart';
+import 'package:mothrly/ui/components/card4.dart';
+import 'package:mothrly/ui/components/coupon_card.dart';
+import 'package:mothrly/ui/components/doubtcard.dart';
+import 'package:mothrly/ui/components/header.dart';
+import 'package:mothrly/ui/components/myButton.dart';
+import 'package:mothrly/ui/screens/book_screen.dart';
+import 'package:mothrly/ui/themes.dart';
 
 class ParentHome extends StatefulWidget {
   const ParentHome({Key? key}) : super(key: key);
@@ -67,30 +69,21 @@ class _ParentHomeState extends State<ParentHome> {
                   const SizedBox(
                     height: 30.0,
                   ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 15.0),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15.0),
                     child: Text(
                       "In the Spotlight",
-                      style: TextStyle(
-                        letterSpacing: 1.0,
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.w600,
-                      ),
+                      style: Themes().cardHeader.copyWith(fontSize: 20.0),
                     ),
                   ),
                   const SizedBox(
                     height: 5.0,
                   ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 15.0),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15.0),
                     child: Text(
                       "Explore deals, offers and recent features ",
-                      style: TextStyle(
-                        fontSize: 13.0,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.grey,
-                        letterSpacing: 0.6,
-                      ),
+                      style: Themes().cardDesc.copyWith(fontSize: 13.0),
                     ),
                   ),
                   const SizedBox(
@@ -117,15 +110,11 @@ class _ParentHomeState extends State<ParentHome> {
                   const SizedBox(
                     height: 20.0,
                   ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 15.0),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15.0),
                     child: Text(
                       "Explore Features",
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.w600,
-                        letterSpacing: 1.0,
-                      ),
+                      style: Themes().cardHeader.copyWith(fontSize: 20.0),
                     ),
                   ),
                   const SizedBox(
@@ -160,15 +149,11 @@ class _ParentHomeState extends State<ParentHome> {
                   const SizedBox(
                     height: 20.0,
                   ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 15.0),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15.0),
                     child: Text(
                       "Doula Skill Set",
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.w600,
-                        letterSpacing: 1.0,
-                      ),
+                      style: Themes().cardHeader.copyWith(fontSize: 20.0),
                     ),
                   ),
                   const SizedBox(
@@ -215,23 +200,17 @@ class _ParentHomeState extends State<ParentHome> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          const Text(
+                          Text(
                             "Join Our Community!",
-                            style: TextStyle(
-                              fontSize: 25.0,
-                              letterSpacing: 1.0,
-                              fontWeight: FontWeight.w700,
-                            ),
+                            style: Themes()
+                                .cardHeader
+                                .copyWith(fontSize: 26.0, letterSpacing: 0.0),
                           ),
-                          const Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 60),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 60),
                             child: Text(
                               "Share your doubts and find solutions from India's top doctors.",
-                              style: TextStyle(
-                                fontSize: 14.0,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.grey,
-                              ),
+                              style: Themes().cardDesc.copyWith(fontSize: 14.0),
                               softWrap: true,
                               textAlign: TextAlign.center,
                             ),
@@ -239,29 +218,10 @@ class _ParentHomeState extends State<ParentHome> {
                           Padding(
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 20.0, vertical: 20.0),
-                            child: ElevatedButton(
-                              onPressed: () {},
-                              child: const Center(
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(vertical: 12.0),
-                                  child: Text(
-                                    "Join now",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 15.0,
-                                      fontWeight: FontWeight.w700,
-                                      letterSpacing: 0.8,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              style: TextButton.styleFrom(
-                                backgroundColor:
-                                    const Color.fromRGBO(242, 107, 147, 1),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(15.0),
-                                ),
-                              ),
+                            child: MyButton(
+                              label: "Join now",
+                              onTapButton: () {},
+                              color: const Color.fromRGBO(242, 107, 147, 1),
                             ),
                           ),
                           Container(
@@ -274,6 +234,12 @@ class _ParentHomeState extends State<ParentHome> {
                             child: ListView(
                               scrollDirection: Axis.horizontal,
                               children: const [
+                                Card4(
+                                  title: "",
+                                  subTitle: "",
+                                  desc: "",
+                                  image: "",
+                                ),
                                 Card4(
                                   title: "LIFESTYLE",
                                   image: "assets/card4p3.png",
@@ -318,31 +284,25 @@ class _ParentHomeState extends State<ParentHome> {
                               children: [
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: const [
+                                  children: [
                                     Text(
                                       "Share Doubts",
-                                      style: TextStyle(
-                                        fontSize: 18.0,
-                                        fontWeight: FontWeight.w600,
-                                      ),
+                                      style: Themes()
+                                          .cardHeader
+                                          .copyWith(fontSize: 18.0),
                                     ),
                                     Text(
                                       "Find solutions from India's top doctors.",
-                                      style: TextStyle(
-                                        fontSize: 13.0,
-                                        fontWeight: FontWeight.w500,
-                                        color: Colors.grey,
-                                      ),
+                                      style: Themes().cardDesc,
                                     ),
                                   ],
                                 ),
-                                const Text(
+                                Text(
                                   "View All",
-                                  style: TextStyle(
-                                    fontSize: 14.0,
-                                    fontWeight: FontWeight.w500,
-                                    color: Color.fromRGBO(255, 93, 134, 1),
-                                  ),
+                                  style: Themes().cardDesc.copyWith(
+                                        color: const Color.fromRGBO(
+                                            255, 93, 134, 1),
+                                      ),
                                 )
                               ],
                             ),

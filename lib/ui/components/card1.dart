@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mothrly/ui/themes.dart';
 
 class Card1 extends StatelessWidget {
   final dynamic image;
@@ -38,28 +39,18 @@ class Card1 extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 16.0),
                   child: Text(
                     title,
-                    style: const TextStyle(
-                      fontSize: 28.0,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white70,
-                      letterSpacing: 1.0,
-                    ),
+                    style: Themes().cardHeader.copyWith(color: Colors.white70),
                   ),
                 ),
                 bottom: 50,
               ),
-              const Positioned(
+              Positioned(
                 child: Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 16.0, vertical: 5.0),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 16.0, vertical: 5.0),
                   child: Text(
                     "Consult an experienced gynaecologist and\nwash away your worries",
-                    style: TextStyle(
-                      fontSize: 12.0,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.grey,
-                      letterSpacing: 0.7,
-                    ),
+                    style: Themes().cardDesc,
                   ),
                 ),
                 bottom: 10,

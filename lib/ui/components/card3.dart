@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mothrly/ui/themes.dart';
 
 class Card3 extends StatelessWidget {
   final String image;
@@ -12,15 +13,12 @@ class Card3 extends StatelessWidget {
         width: 250,
         height: 250,
       ),
-      child: const Padding(
-        padding: EdgeInsets.all(15.0),
+      child: Padding(
+        padding: const EdgeInsets.all(15.0),
         child: Text(
           "Lorem Ipsum",
-          style: TextStyle(
-            fontSize: 20.0,
-            fontWeight: FontWeight.w600,
-            color: Colors.white,
-          ),
+          style:
+              Themes().cardHeader.copyWith(color: Colors.white, fontSize: 20.0),
         ),
       ),
       decoration: BoxDecoration(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // Screens Importing
-import 'screens/find_doulas.dart';
+import 'package:mothrly/ui/screens/find_doulas.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,11 +15,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Mothrly',
       debugShowCheckedModeBanner: false,
-      home: FindDoulasScreen(),
+      home: const FindDoulasScreen(),
       theme: ThemeData(
-        scaffoldBackgroundColor: Color.fromRGBO(245, 245, 245, 1,),
+        scaffoldBackgroundColor: const Color.fromRGBO(
+          245,
+          245,
+          245,
+          1,
+        ),
       ),
-
     );
   }
 }
